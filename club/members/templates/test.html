@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'myglobal.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'layout.html' with me='Google play' YouTube='音樂' %}
+    <h1>Welcome</h1>
+
+    <p>This is my web site.</p>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Join-Date</th>
+        </tr>
+        {% for x in mymembers %}
+            <tr>            
+                <td>{{x.id}}</td>
+                <td>{{x.firstname}}</td>
+                <td>{{x.lastname}}</td>            
+                <td>{{x.join_date}}</td>            
+            </tr>
+        {% endfor %}
+    </table>
+    <p>Check out mymenu.html to see the HTML content of the include.</p>
+</body>
+</html>
